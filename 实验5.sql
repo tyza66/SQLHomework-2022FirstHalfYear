@@ -59,7 +59,7 @@ SELECT PNAME FROM p WHERE PNO in (SELECT PNO FROM WORKS WHERE ENO = 'E02');
 --9. 查询工资在4000到5000之间的男职工的姓名。
 SELECT ENAME 姓名 FROM EMP WHERE (SEX = '男') AND (SALARY BETWEEN 4000 AND 5000);
 --10. 查询工号为‘E03’的职员的工作情况，结果包括姓名、项目名和参加项目时长。
-SELECT e.ENAME 姓名,p.PNAME 项目名,w.DUR 参加项目时长 FROM EMP e,P p,WORKS w WHERE e.ENO = w.ENO AND p.PNO = w.PNO;
+SELECT e.ENAME 姓名,p.PNAME 项目名,w.DUR 参加项目时长 FROM EMP e,P p,WORKS w WHERE e.ENO = w.ENO AND p.PNO = w.PNO AND e.ENO = 'E03';
 --11．查询员工表中所有男同学信息，结果按工资升序排列。
 SELECT * FROM EMP WHERE SEX = '男' ORDER BY SALARY;
 --12．查询所有员工信息，结果按工资降序排列。
